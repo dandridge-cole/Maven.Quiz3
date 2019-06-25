@@ -41,13 +41,11 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        SomeType[] working = array.clone();
    //     List<SomeType> list = new ArrayList<>();//Arrays.asList(array);
    //     for(int i = 0;i<array.length;i++) if(predicate.apply(array[i])) list.add(array[i]);
         // return list.toArray(array);
         Integer counter = 0;
-        for(int i = 0;i<array.length;i++) if(predicate.apply(array[i])) working[counter++]=array[i];
-        SomeType[] answer = Arrays.copyOf(working,counter);
-        return answer;
+        for(int i = 0;i<this.array.length;i++) if(predicate.apply(this.array[i])) this.array[counter++]=this.array[i];
+        return Arrays.copyOf(this.array,counter);
     }
 }
