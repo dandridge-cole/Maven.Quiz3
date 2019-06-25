@@ -11,7 +11,7 @@ public enum RockPaperScissorHandSign {
     public RockPaperScissorHandSign getWinner() {
         return getRockPaperScissorHandSign(PAPER, SCISSOR, ROCK);
     }
-    
+
     public RockPaperScissorHandSign getLoser() {
         return getRockPaperScissorHandSign(SCISSOR, ROCK, PAPER);
     }
