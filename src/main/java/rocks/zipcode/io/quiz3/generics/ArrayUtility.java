@@ -1,8 +1,8 @@
 package rocks.zipcode.io.quiz3.generics;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * @author leon on 09/12/2018.
@@ -41,6 +41,13 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        return null;
+        SomeType[] working = array.clone();
+   //     List<SomeType> list = new ArrayList<>();//Arrays.asList(array);
+   //     for(int i = 0;i<array.length;i++) if(predicate.apply(array[i])) list.add(array[i]);
+        // return list.toArray(array);
+        Integer counter = 0;
+        for(int i = 0;i<array.length;i++) if(predicate.apply(array[i])) working[counter++]=array[i];
+        SomeType[] answer = Arrays.copyOf(working,counter);
+        return answer;
     }
 }
